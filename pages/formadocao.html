@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/formadocao.css" />
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <title>Formulário de adoção</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <li><a href="/pages/index.html">Home</a></li>
+        
+        <li><a href="#sobre">Ong</a></li>
+        <li><a href="#adotar">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+
+        <a href="/pages/index.html"
+          ><img
+            src="/assets/IMG-20241002-WA0008.jpg"
+            alt="logo ong alma viralata"
+        /></a>
+
+        <li><a href="/pages/fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </nav>
+    </header>
+
+    <div class="adocao-container">
+      <h2>Formulário de adoção <i class="fa-solid fa-paw"></i></h2>
+      <p>Suas respostas são necessárias para que possamos entender melhor o seu perfil para a adoção.
+      </p>
+
+      
+     <section class="container">
+      <div class="descricao-dog">
+        
+        
+        
+        </div>
+          
+   
+      <form id="formAdocao" >
+        
+        <div class="container-form">
+          <div>
+            <div class="form-group">
+              <label for="dogName">Interesse em adotar:</label>
+              <input type="text" id="dogNameForm" placeholder="digite o nome do cachorro que deseja adotar" required />
+            </div>
+            <div class="form-group">
+             
+              <label for="name">Nome Completo:</label>
+              <input type="text" id="name" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="age">Idade:</label>
+              <input type="number" id="age" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="localidade">Bairro/Cidade:</label>
+              <input type="text" id="localidade" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="tel">Telefone/WhatsApp:</label>
+              <input type="tel" id="tel" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="currentWork">1. Qual é o seu trabalho atual?</label>
+              <input type="text" id="currentWork" required />
+            </div>
+          
+            <div class="form-group">
+              <label for="homeStatus">2. Sua casa é alugada ou própria?</label>
+              <select id="homeStatus" required>
+                <option value="alugada">Alugada</option>
+                <option value="propria">Casa Própria</option>
+              </select>
+            </div>
+           </div>
+          
+           <div>
+            <div class="form-group" >
+              <label>3. Se é alugada, o proprietário está ciente da adoção?</label>
+              <div class="radio">
+                <label for="ownerYes">Sim</label>
+                <input type="radio" name="ownerApproval" id="ownerYes" value="sim" required />
+                
+              </div>
+              <div class="radio">
+                <label for="ownerNo">Não</label>
+                <input type="radio" name="ownerApproval" id="ownerNo" value="nao" />
+                
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label>4. Todos os moradores da casa concordam com a adoção?</label>
+              <div class="radio">
+                <label for="residentsYes">Sim</label>
+                <input type="radio" name="residentsApproval" id="residentsYes" value="sim" required />
+                
+              </div>
+              <div class="radio">
+                <label for="residentsNo">Não</label>
+                <input type="radio" name="residentsApproval" id="residentsNo" value="nao" />
+               
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label>5. Tem outros animais na casa? Quais?</label>
+              <div class="radio">
+                <label for="petsYes">Sim</label>
+                <input type="radio" name="hasPets" id="petsYes" value="sim" required />
+                
+              </div>
+              <div class="radio">
+                <label for="petsNo">Não</label>
+                <input type="radio" name="hasPets" id="petsNo" value="nao" />
+               
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="vaccination">Estão vacinados ou castrados?</label>
+              <textarea id="vaccination" placeholder="Descreva aqui..."></textarea>
+            </div>
+          
+            <div class="form-group">
+              <label for="houseMembers">6. Existem crianças ou idosos na casa? Quais as idades?</label>
+              <textarea id="houseMembers" placeholder="Descreva aqui..."></textarea>
+            </div>
+          
+            <div class="form-group">
+              <label for="animalLocation">7. Descreva o local onde o animal ficará em sua casa:</label>
+              <textarea id="animalLocation" placeholder="Ex.: Quintal, dentro de casa, etc." required></textarea>
+            </div>
+          
+            <div class="checkbox">
+              <input type="checkbox" id="contactAgreement" required />
+              <label for="contactAgreement">
+                Aceito receber contato pelo WhatsApp ou E-mail sobre a adoção.
+              </label>
+            </div>
+           </div>
+        </div>
+      
+        <div class="form-group">
+          <button type="submit" id="btnAdotarForm" class="btnAdotarform">
+            Enviar
+          </button>
+        </div>
+        <button type="submit" id="close" class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      
+        <div id="mensagemContainer"></div>
+      </form>
+
+    </section>
+      
+
+    <!-- Scripts -->
+
+    <script type="module" src="/js/script.js"></script>
+
+    <script type="module" src="/js/formadocao.js"></script>
+    <script type="module" src="/js/formAdotante.js"></script>
+       <script type="module" src="firebase.js"></script>
+
+
+  </body>
+</html>

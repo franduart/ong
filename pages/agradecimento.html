@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado pela sua doação!</title>
+  <link rel="stylesheet" href="/styles/agradecimento.css">
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+  <div class="thank-you-container">
+    <img src="/assets/Design sem nome.png" alt="" width="100">
+    <h1>Obrigado pela sua doação!</h1>
+    <p>Sua generosidade faz a diferença na vida dos nossos amiguinhos de quatro patas. 💖</p>
+    <p>Com sua ajuda, podemos continuar salvando vidas e promovendo adoções responsáveis.</p>
+    
+    <div class="buttons-container">
+      <button onclick="compartilhar()">Compartilhar</button>
+      <a href="/pages/index.html" class="btn">Voltar ao início</a>
+    </div>
+  </div>
+
+  <script>
+    function compartilhar() {
+      const texto = "Acabei de fazer uma doação para uma ONG incrível que ajuda cães em situação de vulnerabilidade. Junte-se a mim! 🐾";
+      const url = window.location.href;
+      if (navigator.share) {
+        navigator.share({
+          title: "Doe e Salve Vidas!",
+          text: texto,
+          url: url,
+        }).then(() => {
+          alert("Obrigado por compartilhar!");
+        }).catch(console.error);
+      } else {
+        alert("Seu navegador não suporta compartilhamento direto. Copie o link para compartilhar!");
+      }
+    }
+  </script>
+</body>
+</html>

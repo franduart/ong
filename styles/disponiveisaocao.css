@@ -1,0 +1,133 @@
+@import url(/styles/global.css);
+@import url(/styles/style.css);
+
+
+body{
+
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 300;
+}
+
+.dog-card{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+}
+.dog-card div{
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.dog-card div img{
+    max-width: 200px;
+    object-fit: contain;
+}
+
+#resultados {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 80%;
+    align-items: center;
+
+}
+#resultados .dog {
+    height: 100%;
+    border: 2px solid #ccc;
+    color: black;
+}
+.active{
+    display: flex;
+}
+
+#resultados .dog a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    background-color: #ccc;
+    gap: 10px;
+
+}
+.btnAdotarForm{
+    background-color: var(--primary-text-dark);
+    padding: 10px 1rem;
+    border: none;
+    font-size: 1.2rem;
+    color: #fff;
+    
+}
+
+
+.adotardiv{
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-text-dark) ;
+    color: #0077b6;
+}
+.adotardiv h2{
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Rubik", serif;
+    color: #fff;
+
+}
+.adotardiv p{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media screen and (max-width: 468px) {
+    #resultados {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+    
+    }
+    .dog-card div img{
+        width: 100%;
+        object-fit: contain;
+        object-fit: cover;
+    }
+    .adotardiv{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: var(--primary-text-dark) ;
+        color: #0077b6;
+        width: 100%;
+    }
+    .adotardiv p{
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+    }
+}

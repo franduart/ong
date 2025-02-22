@@ -1,0 +1,336 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+}
+#btnDash{
+  display: none;
+}
+
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 20px;
+  flex-shrink: 0;
+  height: 100%;
+
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #555;
+}
+
+/* Estilização do conteúdo principal */
+main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+main .form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Cabeçalho */
+header.nav {
+  display: none;
+}
+
+
+
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #555;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.charts {
+  padding: 2rem;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tabela */
+.tabela {
+  overflow-x: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #f08c00;
+  color: #fff;
+}
+
+table thead th {
+  padding: 5px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  font-size: 0.7rem;
+}
+
+table tbody td {
+  padding: 5px;
+}
+table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+.editar{
+background-color: green;
+margin-bottom: 5px;
+color: #fff;
+border: none;
+padding: 3px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.deletar{
+background-color: red;
+margin-bottom: 5px;
+color: #fff;
+border: none;
+padding: 3px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.fa-bars {
+  display: none; /* Oculto em telas maiores */
+}
+
+
+
+@media (max-width: 480px) {
+  #btnDash{
+    display: flex;
+  }
+  
+.container{
+  flex-direction: column;
+  overflow-x: hidden;
+
+}
+.main-content h1{
+  max-width: 70%;
+}
+.containerPrincipal{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  max-width: 60%;
+  display: flex;
+  align-items: center;
+}
+.header h1{
+  font-size: 1rem;
+
+}
+main{
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards{ 
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+ 
+}
+.canvas {
+  max-width: 100%;
+  height: auto;
+}
+.fa-bars{
+  font-size: 1.7rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.fa-bars {
+  display: block; /* Visível em telas menores */
+  font-size: 1.7rem;
+  padding: 10px;
+  cursor: pointer;
+  color: #333;
+}
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  color: #ffff;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+  display: block;
+  color: #fff;
+}
+.main-content{
+  flex-direction: column;
+}
+.tabela{
+overflow-y: auto;
+}
+.dashboard {
+  display: block;
+  width: 100%;
+}
+.main-content{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0 auto;
+  
+}
+.cadastrar-dog h2{
+  width: 70vw;
+  font-size: 1.2rem;
+}
+.cadastrar-dog{
+  width: 100%;
+  margin: auto;
+}
+#dogForm input{
+  width: 80vw;
+  height: 2.5rem;
+  font-family: 1rem;
+  padding: 5px;
+}
+#dogForm select{
+  height: 2.5rem;
+  font-size: 1.2rem;
+}
+#dogForm button{
+  width: 80vw;
+  height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+
+}

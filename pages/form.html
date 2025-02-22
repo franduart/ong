@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/form.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Form adm Alma Viralata</title>
+</head>
+<body>
+    <div class="login-container">
+        <img src="/assets/IMG-20241002-WA0008.jpg" alt="">
+        <h2>Login  <i class="fa-solid fa-paw"></i></h2>
+        <form id="loginForm" >
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="btnForm">Entrar</button>
+            </div>
+            <div>
+                <a href="/pages/index.html">Voltar ao início</a> <br>
+                <a href="">redefinir senha</a>
+            </div>
+        </form>
+        <p id="error-message" style="color:red;">senha ou email incorretos</p>
+    </div>
+
+    
+  <script type="module" src="/js/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+ <script type="get" src="gs://ong-alma-viralata-2951a.appspot.com/dogs"></script>
+  <script type="module" src="/js/script.js"></script>
+</body>
+</html>

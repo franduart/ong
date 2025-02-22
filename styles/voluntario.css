@@ -1,0 +1,18 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.cadastrarVoluntario{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 70%;
+}
+.cadastrarVoluntario input{
+    height: 2rem;
+}
+.cadastrarVoluntario textarea{
+    resize: none;
+    height: 200px;
+}

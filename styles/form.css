@@ -1,0 +1,124 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    letter-spacing: 2px;
+  }
+  
+  /* Container do login */
+  .login-container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(236, 139, 13, 0.1);
+    text-align: center;
+  }
+  
+  /* Estilo da imagem */
+  .login-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Título */
+  .login-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .login-container h2 i {
+    color: #f08c00;
+  }
+  
+  /* Formulário */
+  #loginForm {
+  
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  /* Rótulos */
+  .form-group label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Campos de entrada */
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #f08c00;
+  }
+  
+  /* Botão */
+  .form-group button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f08c00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-group button:hover {
+    background-color: #d07600;
+  }
+  
+  /* Mensagem de erro */
+  #error-message {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    display: none; /* Inicialmente escondido */
+  }
+  
+  
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 20px;
+    }
+  
+    .login-container h2 {
+      font-size: 20px;
+    }
+  
+    .form-group input {
+      font-size: 12px;
+    }
+  
+    .form-group button {
+      font-size: 14px;
+    }
+  }
+  

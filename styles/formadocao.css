@@ -1,0 +1,277 @@
+@import url('/styles/global.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    width: 100%;
+}
+
+.adocao-container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem;
+    
+}
+
+#divForm{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+#dogImageUrl {
+  width: 100%;
+}
+#formAdocao{
+    height: auto;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--primary-section);
+    padding: 10px;
+    margin: 0 auto ;
+    box-shadow: 0 0 10px #0000007d;
+    border-radius: 10px;
+    position: fixed;  
+    top: 10px;
+    font-size: 0.5rem;
+}
+.container-form{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+.descricao-dog .descricao{
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.form-group label{
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 500; 
+    margin-bottom: 1rem;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form-group input{
+    height: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 1rem;
+    color: #4d4949;
+    outline: none;
+    padding: 5px;
+
+}
+#mensagem{
+    resize: none;
+    width: 100%;
+    height: 10rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+    outline: none;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    justify-content: space-between;
+}
+textarea{
+    outline: none;
+    border: 2px solid #2a9d8f;
+    resize: none;
+    width: 100%;
+    border-radius: 5px;
+
+}
+.form-group button{
+    background-color: var(--card-agenda);
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+.descricao-dog{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    height: 60%;
+    margin: auto;
+    max-width: 80%;
+    font-size: 1.5rem;
+   
+    border-radius: 5px;
+    color: var(--primary-text-dark);
+    padding: 1rem 0;
+}
+.descricao-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    gap: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+.descricao{
+    font-size: 1.5rem;
+    text-align: left;
+    width: 100%;
+    margin-top: 10%;
+}
+.descricao-div img{
+    max-width: 500px;
+    width: 300px;
+    height: 100%;
+    border-radius: 5px;
+    
+}
+.miniimages{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.miniimages img{
+    width: 50px;
+}
+.btnAdotarform{
+    background-color: #2a9d8f;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+.btnAdotarform:hover{
+    background-color: #1e7269;
+ 
+}
+
+.btnAdotarForm{
+    background-color: #e76f51;
+    border: none;
+    padding: 10px 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000060;
+    text-transform: uppercase;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.btnAdotarForm:hover{
+    background-color: #ffff;
+    color: #e76f51;
+   
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+}
+.radio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media screen and (max-width: 468px) {
+    .descricao-dog{
+       
+        gap: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 100%;
+        width: 100%;
+        font-size: 1.5rem;
+        background-color: var(--primary-section);
+        border-radius: 5px;
+        color: #fff;
+        padding: 1rem 0;
+    }
+  
+    .dogImageUrl{
+        width: 100%;
+    }
+    .container-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    #formAdocao{
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        background-color: var(--primary-text-dark);
+        padding: 10px;
+        margin: 0 auto ;
+        box-shadow: 0 0 10px #0000007d;
+        border-radius: 10px;
+        position: absolute;  
+        top: 10px;
+        font-size: 0.7rem;
+    }
+    #formAdocao label{
+        font-size: 0.7rem;
+    }
+    #formAdocao input{
+   width: 100%;
+   margin-bottom: 10px;
+    }
+  
+}

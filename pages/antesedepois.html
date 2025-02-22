@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <link rel="stylesheet" href="/styles/antesedepois.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ong Alma Viralata</title>
+</head>
+<body>
+
+    <div class="container">
+        <button id="btnDash" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- Navegação lateral -->
+        <nav class="sidebar">
+            <ul>
+             <li><a href="/pages/admin.html" onclick="paginaInicial()">Início</a></li>
+            <li><a href="/pages/animaiscadastrados.html">Animais Cadastrados <i class="fa-solid fa-paw"></i></a></li>
+            <li><a href="/pages/cadastrardog.html" onclick="cadastrarAnimal()">Cadastrar Animal <i class="fa-solid fa-paw"></i></a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1ToJpQ0BBg9rkGNk9GItAXvPBhl_kUDRW-EcCAPI1IQQ/edit?gid=0#gid=0" target="_blank" onclick="paginaInicial()">Interessados em Adotar</a></li>
+
+            <li><a href="/pages/voluntario.html" class="voluntario" onclick="cadastrarVoluntario()">Cadastrar Voluntário</a></li>
+            <li><a href="/pages/eventos.html" class="eventos" onclick="eventos()">Eventos</a></li>
+            <li><a href="/pages/doacao.html" class="doacao" onclick="doacao()">Doação</a></li>
+            <li><a href="/pages/agenda.html" class="agenda" onclick="agenda()">Agenda</a></li>
+            <li><a href="/pages/antesedepois.html" class="agenda" onclick="antes()">Antes e depois resgate</a></li>
+            <li><a href="/pages/form.html" class="sair" onclick="sair()">Sair do Dashboard</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <main>
+            <div class="main-content">
+                <header class="header">
+                    <h1>Dashboard Alma Viralata <i class="fa-solid fa-paw"></i></h1>
+                    <span id="user">user</span>
+                </header>
+
+                <section class="antesedepois">
+                    <h2>Sessão Antes e Depois do Resgate</h2>
+                    <div class="antesedepoisdiv">
+                        <form action="#" id="formAnteseDepois">
+                            <div>
+                                <label for="antes">Imagem de ANTES do Resgate</label>
+                                <input type="file" id="antes" required>
+                                <label for="historiadoResgate">História do Resgate</label>
+                                <textarea id="historiadoResgate" required></textarea>
+                            </div>
+
+                            <div>
+                                <label for="depois">Imagem do DEPOIS</label>
+                                <input type="file" id="depois" required>
+                            </div>
+                            <button type="submit">Publicar</button>
+                            <p id="message-antes"></p>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="tabelaAnteseDepois">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Imagem Antes</th>
+                                <th>História</th>
+                                <th>Imagem Depois</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableResgate">
+                            <!-- Os dados serão preenchidos via JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+    
+    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

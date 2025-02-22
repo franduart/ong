@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <link rel="stylesheet" href="/styles/cadastro-dogs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Cadastrar</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navegação lateral -->
+        <button id="btnDash" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+      </button>
+        <nav class="sidebar">
+          <ul>
+            <li><a href="/pages/admin.html" onclick="paginaInicial()">Início</a></li>
+            <li><a href="/pages/animaiscadastrados.html">Animais Cadastrados <i class="fa-solid fa-paw"></i></a></li>
+            <li><a href="/pages/cadastrardog.html" onclick="cadastrarAnimal()">Cadastrar Animal <i class="fa-solid fa-paw"></i></a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1ToJpQ0BBg9rkGNk9GItAXvPBhl_kUDRW-EcCAPI1IQQ/edit?gid=0#gid=0" target="_blank" onclick="paginaInicial()">Interessados em Adotar</a></li>
+
+            <li><a href="/pages/voluntario.html" class="voluntario" onclick="cadastrarVoluntario()">Cadastrar Voluntário</a></li>
+            <li><a href="/pages/eventos.html" class="eventos" onclick="eventos()">Eventos</a></li>
+            <li><a href="/pages/doacao.html" class="doacao" onclick="doacao()">Doação</a></li>
+            <li><a href="/pages/agenda.html" class="agenda" onclick="agenda()">Agenda</a></li>
+            <li><a href="/pages/antesedepois.html" class="agenda" onclick="antes()">Antes e depois resgate</a></li>
+            <li><a href="/pages/form.html" class="sair" onclick="sair()">Sair do Dashboard</a></li>
+          </ul>
+        </nav>
+    
+        <!-- Conteúdo principal -->
+        <main>
+      <section class="containerPrincipal">
+          <div class="main-content">
+              
+                <h1>Dashboard Alma Viralata <i class="fa-solid fa-paw"></i></h1>
+                <span id="user">user</span>
+              
+           </div>
+    <section class="form" id="cadastrar-animal">
+        <div class="cadastrar-dog">
+          <h2>Cadastro de Cachorros para Adoção</h2>
+          <form id="dogForm" class="cadastrarDog" >
+            <input type="text" id="dogName" placeholder="Nome do cachorro">
+
+            <select name="dogAge" id="dogAge">
+
+              <option value="">Idade</option>
+              <option value="filhote">filhote</option>
+              <option value="adulto">Adulto(a)</option>
+              <option value="idoso">Idoso(a)</option>
+            </select>
+
+            <input type="text" id="dogBreed" placeholder="Raça do cachorro">
+            
+
+            <select name="sexo" id="sexo">
+
+              <option value="">Sexo</option>
+              <option value="femea">Fêmea</option>
+              <option value="macho">Macho</option>
+            </select>
+
+            <textarea id="dogDescription" placeholder="Descrição"></textarea>
+            <select name="porte" id="porte">
+              <option value="">Porte</option>
+              <option value="pequeno">Pequeno</option>
+              <option value="medio">Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+
+            <label for="">Na ong desde:</label>
+            <input type="date" id="data">
+            <input type="file" id="dogImage" accept="image/*">
+            <button type="submit">Cadastrar</button>
+            <div id="message"></div>
+          </form>
+       
+      </section>
+  </section>
+      <script type="module" src="/js/firebase.js"></script>
+      <script type="module" src="/js/script.js"></script>
+      <script type="module" src="/js/formadocao.js"></script>
+      <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

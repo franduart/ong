@@ -1,0 +1,70 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  
+}
+
+
+.formulario-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .formulario-section h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .formulario-section p {
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .voluntario-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .voluntario-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .voluntario-form input, 
+  .voluntario-form select, 
+  .voluntario-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .voluntario-form textarea {
+    resize: none;
+  }
+  
+  .voluntario-form .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .voluntario-form .btn:hover {
+    background-color: #218838;
+  }
+  

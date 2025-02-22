@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!--icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/doe.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    
+    <link rel="shortcut icon" href="/favicon-32x32.png" type="image/x-icon">
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' *.mercadopago.com *.gstatic.com *.google.com;">
+
+    <title>Ong Alma Viralata</title>
+  </head>
+  <body>
+
+    <div class="btnQueroDoar">
+      <a href="pagamento.html">Quero Doar <br> <i class="fa-solid fa-hand-holding-heart"></i></a>
+    </div>
+    <header>
+      <nav class="nav">
+        <li><a href="/pages/index.html">Home</a></li>
+        <li><a href="/pages/sobre.html">Ong</a></li>
+        <li><a href="/pages/disponiveisparaadotar.html">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+
+        <img
+          src="/assets/IMG-20241002-WA0008.jpg"
+          alt="logo ong alma viralata"
+        />
+
+        <button type="menu" class="btnMenu">
+          <i class="fa-solid fa-bars"></i> 
+        </button>
+
+        <li><a href="/pages/fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </nav>
+
+      <div class="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#sobre">Ong</a></li>
+        <li><a href="#adotar">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </div>
+    </header>
+
+    <main class="container-doar">
+     
+        <section class="heroDoar">
+            <div>
+                <h1>Ajude-nos a salvar vidas</h1>
+            <h2>cada doação transforma um destino.</h2>
+            </div>
+            <img src="https://fotos.amomeupet.org/uploads/fotos/0x800_1568662224_5d7fe2d09bccd_hd.jpeg" width="500">
+        </section>
+
+       <section class="sessaoDoar">
+        <section class="sessaoDoar-valores">
+            <div>
+                <strong>R$5/mês</strong>
+                <p>Você ajuda a garantir um futuro melhor para animais resgatados dos maus-tratos.</p>
+                 <button value="5" id="btn" id="button-1" data-price="5.0">Doar Agora</button>
+            </div>
+    
+            <div>
+                <strong>R$15/mês</strong>
+                <p>Você contribui com medicamentos e curativos para a recuperação de um resgatado.</p>
+                 <button  value="15" id="button-2" data-price="15.0">Doar Agora</button>
+            </div>
+    
+            <div>
+                <strong>R$30/mês</strong>
+                <p>Você ajuda nos cuidados dos mais de 200 animais resgatados. Faça a diferença!</p>
+                 <button value="30" id="button-3" data-price="30.0">Doar Agora</button>
+            </div>
+    
+            <div>
+                <strong>R$45/mês</strong>
+                <p>Você proporciona os cuidados básicos de entrada hospitalar para um resgatado.</p>
+                 <button value="45" id="button-4" data-price="45.0">Doar Agora</button>
+            </div>
+        </section>
+
+        <section class="formasdeDoar">
+            <div class="formasdeDoar">
+                <h2>Formas de Doação</h2>
+            <h3>Como você pode ajudar?</h3>
+            <div class="listaDoar">
+                <ul>
+                    <li>Doações únicas (Pix, cartão, boleto).</li>
+                    <li>Doações recorrentes (mensais).</li>
+                    <li> Doação de itens (ração, medicamentos, cobertores).</li>
+                </ul>
+            </div>
+
+            <div>
+               <img src="https://static.tildacdn.one/tild6662-3631-4231-b964-663731363733/banner-institutocara.svg" width="400">
+            </div>
+            </div>
+            
+        </section>
+       </section>
+    </main>
+
+    <footer>
+      <div>
+        <li><a href="/pages/index.html">Home</a></li>
+        <li><a href="#sobre">Ong</a></li>
+        <li><a href="#adotar">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+      </div>
+
+      <img
+        src="/assets/IMG-20241002-WA0008.jpg"
+        alt="logo ong alma viralata"
+        width="150"
+      />
+      <div>
+        <li><a href="/pages/fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </div>
+      <div class="icons-footer">
+        <a href="https://www.instagram.com/almaviralata/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/almaviralataubatuba/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      
+      </div>
+    </footer>
+
+    <hr />
+    <a
+      href="form.html "
+      style="
+        color: black;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        align-items: center;
+        gap: 5px;
+      "
+      ><i class="fa-solid fa-user"></i> login</a
+    >
+    
+    <script>
+      const mp = new MercadoPago("APP_USR-8d840134-a8f6-4ac8-b27a-41dcd54436a5");
+    </script>
+   
+    <script  src="/js/doe.js"></script>
+    <script type="module" src="/js/script.js"></script>
+   
+   
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/global.css">
+    <title>Dashboard Alma Viralata</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <button id="btnDash" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+      <nav class="sidebar">
+        <ul >
+          <li><a href="/pages/admin.html" onclick="paginaInicial()">Início</a></li>
+          <li>
+            <a href="/pages/animaiscadastrados.html"
+              >Animais Cadastrados <i class="fa-solid fa-paw"></i
+            ></a>
+          </li>
+          <li>
+            <a href="/pages/cadastrardog.html" onclick="cadastrarAnimal()"
+              >Cadastrar Animal <i class="fa-solid fa-paw"></i
+            ></a>
+          </li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1ToJpQ0BBg9rkGNk9GItAXvPBhl_kUDRW-EcCAPI1IQQ/edit?gid=0#gid=0" target="_blank" onclick="paginaInicial()">Interessados em Adotar</a></li>
+          <li>
+            <a href="/pages/voluntario.html" class="vuluntario" onclick="cadastrarVoluntario()"
+              >Cadastrar Voluntário</a
+            >
+          </li>
+          <li>
+            <a href="/pages/eventos.html" class="eventos" onclick="eventos()">Eventos</a>
+          </li>
+          <li>
+            <a href="/pages/doacao.html" class="doacao" onclick="doacao()">Doação</a>
+          </li>
+          <li>
+            <a href="/pages/agenda.html" class="agenda" onclick="agenda()">agenda</a>
+          </li>
+          <li>
+            <a href="/pages/form.html" class="sair" onclick="doacao()"
+              >Sair do Dashboard</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Conteúdo principal -->
+      <main>
+        <div class="main-content">
+         
+            <h1>Dashboard Alma Viralata <i class="fa-solid fa-paw"></i></h1>
+            <span id="user">user</span>
+ 
+
+          <section class="cards">
+            <div class="card">
+              <h2>Volúntários</h2>
+              <p id="userCount">0</p>
+            </div>
+            <div class="card">
+              <h2>dogs</h2>
+              <p id="salesCount">0</p>
+            </div>
+            <div class="card">
+              <h2>doações</h2>
+              <p id="profit">R$ 0,00</p>
+            </div>
+          </section>
+          <section class="charts">
+            <canvas id="salesChart"></canvas>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/js/pagamento.js"></script>
+
+    <script type="module" src="/js/firebase.js"></script>
+  </body>
+</html>

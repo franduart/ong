@@ -1,0 +1,107 @@
+.formAgenda{
+    margin-top: 1rem;
+}
+.agenda{
+    background-color: rgb(234, 146, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    height: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.agenda  label{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+}
+.agenda input{
+    border: none;
+    height: 2rem;
+    border-radius: 5px;
+    padding: 5px;
+}
+.agenda div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+}
+.agenda ul{
+    background-color: #fff;
+    padding: 1rem;
+    width: 30%;
+    list-style: none;
+    border-radius: 5px;
+}
+#agendaForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.agenda button{
+ border: none;
+ background-color: green;
+ color: #fff;
+ border-radius: 5px;
+ padding: 5px;
+ cursor: pointer;
+ transition: 1s ease;
+ border: 1px solid #fff;
+ font-size: 1rem;
+}
+.agenda select{
+    font-size: 1rem;
+    border: none;
+}
+
+.agenda button:hover{
+    box-shadow: 0 0 5px #00000096;
+    background-color:rgb(26, 180, 12);
+    color:#ffff;
+}
+
+.agenda textarea{
+    resize: none;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+.cadastrar-agenda{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: 10px;
+}
+.evento{
+    height: 100%;
+}
+.success {
+    color: green;
+    font-weight: bold;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cadastrar-agenda{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 468px) {
+    .cadastrar-agenda{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

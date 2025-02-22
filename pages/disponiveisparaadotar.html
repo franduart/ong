@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+     <!--icons-->
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer"
+   />
+
+   <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/agenda.css">
+    <link rel="stylesheet" href="/styles/disponiveisaocao.css">
+
+    <title>Ong Alma Viralata</title>
+  </head>
+  <body>
+    <div class="btnQueroDoar">
+      <a href="/pages/pagamento.html">Quero Doar <br> <i class="fa-solid fa-hand-holding-heart"></i></a>
+    </div>
+
+    <header>
+      <nav class="nav">
+        <li><a href="/pages/index.html">Home</a></li>
+        <li><a href="#sobre">Ong</a></li>
+        <li><a href="#adotar">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+
+        <img src="/assets/IMG-20241002-WA0008.jpg" alt="logo ong alma viralata" />
+        <button type="menu" class="btnMenu">
+          <i class="fa-solid fa-bars"></i> 
+        </button>
+        <li><a href="/pages/fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </nav>
+    </header>
+
+    <main class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem;">
+      <a href="index.html" style="color: black; text-decoration: 1px solid blue ;">Voltar</a>
+
+      <section id="adotar">
+        <div class="adotardiv">
+          <h2 style="color: #fff;">À espera de um lar</h2>
+          <p>Nas baias do abrigo eles esperam por um LAR, e adotar é dar uma nova chance de amor e companheirismo. Abra seu coração e mude uma vida para sempre!</p>
+        </div>
+        <br />
+        <div>
+          <select id="porte">
+            <option value="">Porte</option>
+            <option value="pequeno">Pequeno</option>
+            <option value="medio">Médio</option>
+            <option value="grande">Grande</option>
+          </select>
+          
+          <select id="idade">
+            <option value="">Idade</option>
+            <option value="filhote">Filhote</option>
+            <option value="adulto">Adulto</option>
+            <option value="idoso">Idoso</option>
+          </select>
+          
+          <select id="sexo">
+            <option value="">Sexo</option>
+            <option value="femea">Fêmea</option>
+            <option value="macho">Macho</option>
+          </select>
+        </div>
+      </section>
+
+      <div id="resultados" style="gap: 10px;"></div>
+
+      <div id="pagination" style="display: flex; justify-content: center; gap: 20px;">
+        <button id="prevPage" style="padding: 5px 10px;">Página Anterior</button>
+        <button id="nextPage" style="padding: 5px 10px;">Próxima Página</button>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <li><a href="/pages/index.html">Home</a></li>
+        <li><a href="#sobre">Ong</a></li>
+        <li><a href="#adotar">Adotar</a></li>
+        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+      </div>
+      <img src="/assets/IMG-20241002-WA0008.jpg" alt="logo ong alma viralata" width="150" />
+      <div>
+        <li><a href="/pages/fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </div>
+      <div class="icons-footer">
+        <a href="https://www.instagram.com/almaviralata/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/almaviralataubatuba/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </footer>
+
+    <hr />
+    <a href="form.html" style="color: black; display: flex; justify-content: center; padding: 5px; align-items: center; gap: 5px;">
+      <i class="fa-solid fa-user"></i> login
+    </a>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script type="module" src="/js/script.js"></script>
+    <script type="module" src="/js/firebase.js"></script>
+    <script type="module" src="/js/disponiveisAdocao.js"></script>
+ 
+  </body>
+</html>

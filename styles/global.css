@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+VN:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playwrite+VN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --primary-body: #ffffff;
+    --primary-section: #14213d;
+    --card-agenda: #6a994e;
+
+    --primary-btn-orange: #fca311;
+    --primary-btn: #fca311;
+    
+
+    --primary-text-dark: #003566;
+    --primary-text-black: #0000;
+    --primary-text-red: #9a031e;
+
+    
+}
