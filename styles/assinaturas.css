@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.blue-button {
+    background-color: green;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    }
+    .blue-button:hover {
+    background-color: #2a68c8;
+    }
+
+
+.assinatura{
+  max-width: 80%;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+}
+.assinatura h2{
+  font-family: 'Roboto', sans-serif;
+  color: #FCA311;
+  font-size: 40px;
+  width: 100%;
+  display: inline;
+  padding: 10px;
+ 
+}
+.assinatura-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imagens{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.assinatura img{
+  border: 5px solid #FCA311;
+  border-radius: 20% 50% / 30% 20%;
+}
+
+.assinarHero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    max-width: 80%;
+    margin: 1rem auto;
+}
+
+.assinarHero__explicacao{
+    background-color: #FDC76F;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px #0000008c;
+}
+.assinarHero__vantagens{
+    box-shadow: 0 0 10px #0000008c;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+.assinarHero__vantagens ul li{
+    color: black;
+    list-style-type: disc;
+    padding: 10px;
+    width: 100%;
+}
+
+.escolherPlano {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80%;
+    margin: 2rem auto;
+    height: 100%;
+}
+.escolherPlano h3{
+    color: #FCA311;
+   font-size: 50px;
+}
+.escolherPlano article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    margin-top: 2rem;
+    width: 100%;
+}
+.escolherPlano article div{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 10px #0000008c;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.escolherPlano article div h2{
+   color: #FCA311;
+   font-weight: bold;
+   font-size: 2rem;
+}
+
+.escolherPlano p{
+    font-size: 1.2rem;
+}
+.escolherPlano strong{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FCA311;
+}
+.escolherPlano button{
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: green;
+    color: #fff;
+    box-shadow: 0 0 10px #0000008c;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.escolherPlano button:hover{
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: rgb(20, 157, 20);
+    color: #fff;
+
+}
+
+@media screen and (max-width: 468px) {
+    body{
+        width: 100vw;
+    }
+    .assinarHero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: 1rem auto;
+}
+.imagens, .image-separada{
+    display: none;
+   
+}
+
+.assinatura{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  background-image: url('/assets/ulisses.jpg');
+  background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    position: relative;
+
+}
+
+
+.assinatura h2{
+  font-family: 'Roboto', sans-serif;
+  color: #FCA311;
+  font-size: 50px;
+  line-height: 60px;
+  width: 100%;
+  display: inline;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+ 
+}
+
+.escolherPlano article div h2{
+   color: #FCA311;
+   font-weight: bold;
+   font-size: 1.5rem;
+   width: 100%;
+}
+.escolherPlano article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.escolherPlano article div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blue-button {
+    width: 100%;
+    text-align: center;
+    }
+}

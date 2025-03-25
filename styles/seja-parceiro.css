@@ -1,0 +1,168 @@
+/* Reset básico para garantir que a página tenha um visual consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1, h2, h3 {
+    text-align: center;
+    color: #2a2a2a;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: 300;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* Contêiner principal */
+  .container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  a {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Formulário */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form h2 {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  textarea {
+    resize: vertical;
+    resize: none;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  input[type="submit"] {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #21867a;
+  }
+  
+  /* Seção de informações */
+  section#formulario-voluntarios {
+    background-color: #f0f4f8;
+    padding: 50px 0;
+  }
+  
+  section#formulario-voluntarios .container {
+    background-color: #ffffff;
+  }
+  
+  section#formulario-voluntarios h2 {
+    font-size: 30px;
+    color: #2a9d8f;
+    margin-bottom: 20px;
+  }
+  
+  section#formulario-voluntarios .container p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+  }
+  
+  /* Estilizando as caixas de seleção */
+  input[type="checkbox"], input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  /* Rodapé e chamada à ação */
+  h3 {
+    color: #2a9d8f;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+  
+  #messageDiv {
+    margin-top: 30px;
+    color: #28a745;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  #messageDiv.error {
+    color: #dc3545;
+  }
+  

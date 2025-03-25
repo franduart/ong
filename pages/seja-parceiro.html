@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/seja-parceiro.css">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+   <!--Fonts-->
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+     rel="stylesheet"
+   />
+    <title>Seja um parceiro</title>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <section id="formulario-voluntarios" class="formulario-section">
+        <div class="container">
+
+          <a href="/pages/index.html">Voltar</a>
+          <img src="/assets/IMG-20241002-WA0008.jpg" width="200">
+          <h2>Seja um Parceiro</h2>
+          <p>Ao se juntar a nós, sua empresa contribui diretamente para a causa animal,
+            <br> gerando um impacto positivo na comunidade e mostrando seu compromisso com a responsabilidade social.<i class="fa-solid fa-paw"></i></p>
+          
+            <form action="submit_form.php" method="POST">
+        
+                <h2>1. Dados da Empresa</h2>
+                <label for="empresa">Nome da Empresa:</label>
+                <input type="text" id="empresa" name="empresa" required><br><br>
+        
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj" required><br><br>
+        
+                <label for="endereco">Endereço Comercial:</label>
+                <input type="text" id="endereco" name="endereco" required><br><br>
+        
+                <label for="telefone">Telefone para Contato:</label>
+                <input type="tel" id="telefone" name="telefone" required><br><br>
+        
+                <label for="email_empresa">E-mail para Contato:</label>
+                <input type="email" id="email_empresa" name="email_empresa" required><br><br>
+        
+                <h2>2. Informações sobre a Parceria</h2>
+                <label for="tipo_parceria">Tipo de Parceria:</label><br>
+                <input type="checkbox" id="doacoes_financeiras" name="tipo_parceria[]" value="Doações financeiras">
+                <label for="doacoes_financeiras">Doações financeiras</label><br>
+                <input type="checkbox" id="doacoes_produtos" name="tipo_parceria[]" value="Doações de produtos">
+                <label for="doacoes_produtos">Doações de produtos (ração, medicamentos, brinquedos, etc.)</label><br>
+                <input type="checkbox" id="voluntariado" name="tipo_parceria[]" value="Ações de voluntariado">
+                <label for="voluntariado">Ações de voluntariado</label><br>
+                <input type="checkbox" id="campanhas" name="tipo_parceria[]" value="Campanhas de arrecadação">
+                <label for="campanhas">Campanhas de arrecadação</label><br>
+                <input type="checkbox" id="marketing" name="tipo_parceria[]" value="Divulgação em redes sociais e marketing">
+                <label for="marketing">Divulgação em redes sociais e marketing</label><br>
+                <input type="checkbox" id="outro" name="tipo_parceria[]" value="Outro">
+                <label for="outro">Outro (especifique):</label>
+                <input type="text" id="outro_especificar" name="outro_especificar"><br><br>
+        
+                <label for="objetivo">Objetivo da Parceria (Descreva brevemente como sua empresa deseja contribuir com a Alma Viralata):</label><br>
+                <textarea id="objetivo" name="objetivo" rows="4" required></textarea><br><br>
+        
+                <label for="proposta">Possui alguma expectativa ou proposta específica para a parceria? (Exemplo: ações conjuntas, eventos, campanhas, etc.)</label><br>
+                <textarea id="proposta" name="proposta" rows="4"></textarea><br><br>
+        
+                <h2>3. Benefícios para a Empresa</h2>
+                <label for="beneficios">Quais os principais benefícios que sua empresa acredita que pode oferecer para essa parceria?</label><br>
+                <textarea id="beneficios" name="beneficios" rows="4" required></textarea><br><br>
+        
+                <label for="divulgacao">Está ciente de que a sua marca será divulgada nas plataformas e eventos da Alma Viralata?</label><br>
+                <input type="radio" id="divulgacao_sim" name="divulgacao" value="Sim" required>
+                <label for="divulgacao_sim">Sim</label><br>
+                <input type="radio" id="divulgacao_nao" name="divulgacao" value="Não">
+                <label for="divulgacao_nao">Não</label><br><br>
+        
+                <h2>4. Dados de Responsável pela Parceria</h2>
+                <label for="responsavel">Nome do Responsável:</label>
+                <input type="text" id="responsavel" name="responsavel" required><br><br>
+        
+                <label for="cargo">Cargo/Função:</label>
+                <input type="text" id="cargo" name="cargo" required><br><br>
+        
+                <label for="telefone_responsavel">Telefone de Contato:</label>
+                <input type="tel" id="telefone_responsavel" name="telefone_responsavel" required><br><br>
+        
+                <label for="email_responsavel">E-mail de Contato:</label>
+                <input type="email" id="email_responsavel" name="email_responsavel" required><br><br>
+        
+                <h2>5. Outras Observações</h2>
+                <label for="observacoes">Caso tenha mais alguma informação ou dúvida, por favor, nos avise abaixo.</label><br>
+                <textarea id="observacoes" name="observacoes" rows="4"></textarea><br><br>
+        
+                <label for="termos">Aceito os termos e condições da parceria.</label>
+                <input type="checkbox" id="termos" name="termos" required><br><br>
+        
+                <input type="submit" value="Enviar Formulário">
+        
+            </form>
+          <div id="messageDiv"></div>
+        </div>
+
+        <h3>Juntos, podemos fazer a diferença e proporcionar
+             um futuro melhor para muitos animais. <br> Vamos unir forças por uma causa que vale a pena!</h3>
+      </section>
+      <script type="module" src="/js/sejaVoluntario.js"></script>
+</body>
+</html>

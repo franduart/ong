@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  
+}
+
+.container{
+    height: calc(100vh - 30vh);
+}
+.cardApadrinhar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.cardText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;   
+}
+
+.cardText h1{
+  font-size: 2rem;
+  color: rgb(154, 8, 8);
+}
+.cardApadrinhar img{
+    border-radius: 5px;
+    width: 400px;
+}
+
+.cardText button{
+    margin-top: 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    border: 3px solid rgb(19, 151, 19) ;
+    padding: 5px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s ease-out;
+}
+#custosMensais{
+    font-size: 1.2rem;
+}
+.cardText button:hover{
+    color:  rgb(19, 151, 19) ;
+    border: 3px solid #000;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 468px) {
+    .container{
+    height: 100%;
+}
+    .cardApadrinhar{
+        flex-direction: column;
+    }
+    .cardApadrinhar img{
+        width: 100%;
+    }
+}
