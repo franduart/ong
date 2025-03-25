@@ -8,7 +8,7 @@ document.querySelectorAll("button[data-price]").forEach(button => {
         }
 
         try {
-            const response = await fetch("http://localhost:5500/create_preference", {
+            const response = await fetch("https://ong-5wez.onrender.com/create_preference", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
