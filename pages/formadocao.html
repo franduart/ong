@@ -28,9 +28,9 @@
       <nav class="nav">
         <li><a href="/pages/index.html">Home</a></li>
         
-        <li><a href="#sobre">Ong</a></li>
-        <li><a href="#adotar">Adotar</a></li>
-        <li><a href="#ajuda">Ajudar</a></li>
+        <li><a href="/pages/sobre.html">Ong</a></li>
+        <li><a href="/pages/disponiveisparaadotar.html">Adotar</a></li>
+        <li><a href="/pages/doe">Ajudar</a></li>
         <li><a href="#agenda">Agenda</a></li>
 
         <a href="/pages/index.html"
@@ -45,12 +45,28 @@
         <li><a href="#bazar">Bazar</a></li>
         <li><a href="#contato">Contato</a></li>
       </nav>
+
+      <div class="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="/pages/sobre.html">Sobre</a></li>
+        <li><a href="/pages/disponiveisparaadotar.html">Adotar</a></li>
+        <li><a href="/pages/doe.html">Ajudar</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="/pages/midia.html">Mídia</a></li>
+        <li><a href="#parcerias">Parceiros</a></li>
+        <li><a href="#bazar">Bazar</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </div>
     </header>
 
     <div class="adocao-container">
+      <a href="index.html" style="color: #000;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+     <div >
       <h2>Formulário de adoção <i class="fa-solid fa-paw"></i></h2>
       <p>Suas respostas são necessárias para que possamos entender melhor o seu perfil para a adoção.
       </p>
+     </div>
 
       
      <section class="container">
@@ -69,6 +85,7 @@
               <label for="dogName">Interesse em adotar:</label>
               <input type="text" id="dogNameForm" placeholder="digite o nome do cachorro que deseja adotar" required />
             </div>
+           <div>
             <div class="form-group">
              
               <label for="name">Nome Completo:</label>
@@ -107,7 +124,7 @@
                 <option value="propria">Casa Própria</option>
               </select>
             </div>
-           </div>
+       
           
            <div>
             <div class="form-group" >
@@ -123,8 +140,10 @@
                 
               </div>
             </div>
+           </div>
           
-            <div class="form-group">
+            <div>
+              <div class="form-group">
               <label>4. Todos os moradores da casa concordam com a adoção?</label>
               <div class="radio">
                 <label for="residentsYes">Sim</label>
@@ -181,6 +200,7 @@
             Enviar
           </button>
         </div>
+            </div>
         <button type="submit" id="close" class="close">
           <i class="fa-solid fa-xmark"></i>
         </button>

@@ -60,8 +60,9 @@ function sejaVoluntario() {
 
             // Redirecionar após 2 segundos
             setTimeout(() => {
-                window.location.href = 'voluntariadoContato.html';
+                window.location.href = '/pages/voluntariadoContato.html';
             }, 2000);
+           
         } catch (error) {
             console.error("Erro ao cadastrar voluntário:", error);
             messageDiv.textContent = "Ocorreu um erro ao realizar o cadastro. Tente novamente.";
@@ -71,3 +72,4 @@ function sejaVoluntario() {
 }
 
 sejaVoluntario();
+

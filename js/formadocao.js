@@ -15,6 +15,7 @@ const firebaseConfig = {
 // Inicializando o Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
 document.addEventListener('DOMContentLoaded', async () => {
     const formAdocao = document.querySelector('.descricao-dog');
 
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <a href="#"> <img src="/assets/IMG-20241002-WA0008.jpg" width="50"></a>
                 <a href="#"> <img src="/assets/IMG-20241002-WA0008.jpg" width="50"></a>
               </div>
-              <button class="btnAdotarForm">Adotar ${dogData.nome}</button>
+              <button class="btnAdotarForm" onclick="preencherNomeCachorro()">Adotar ${dogData.nome}</button>
             </div>
             <p id="dogDescription" class="descricao">${dogData.description || "Descrição não disponível."}</p>
           </div>
@@ -60,40 +61,56 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Adiciona o evento ao botão de adoção
         const btnAdotarForm = document.querySelector('.btnAdotarForm');
-        btnAdotarForm.addEventListener('click', abrirModalForm);
+        if (btnAdotarForm) {
+            btnAdotarForm.addEventListener('click', abrirModalForm);
+        }
 
     } catch (error) {
         console.error("Erro ao buscar dados do cachorro:", error);
         formAdocao.innerHTML = `<p>Ocorreu um erro ao carregar as informações. Tente novamente mais tarde.</p>`;
     }
-
-    // Função para abrir o modal
-    function abrirModalForm() {
-        // Crie ou exiba um modal
-        const modal = document.querySelector('#formAdocao'); // Verifique se existe um modal com ID #modal
-        if (modal) {
-            modal.style.display = 'flex'; // Mostra o modal
-        } else {
-            alert('Modal ainda não implementado.');
-        }
-    }
-
-    
 });
 
-
-// Função para abrir o modal
-function fecharModal() {
-       
-    const modal = document.querySelector('#close'); 
-    modal.addEventListener('click', ()=>{
-        const form = document.getElementById('formAdocao')
-        if (form) {
-            form.style.display = 'none'; 
-           
-        } else {
-            alert('Modal ainda não implementado.');
-        }
-    })
+// ✅ Função para abrir o modal
+function abrirModalForm() {
+    const modal = document.querySelector('#formAdocao');
+    if (modal) {
+        modal.style.display = 'flex';
+    } else {
+        alert('Modal ainda não implementado.');
+    }
 }
-fecharModal()
+
+// ✅ Função para fechar o modal
+function fecharModal() {
+    const btnFechar = document.querySelector('#close');
+    if (!btnFechar) {
+        console.error("Botão de fechar modal não encontrado.");
+        return;
+    }
+
+    btnFechar.addEventListener('click', () => {
+        const form = document.getElementById('formAdocao');
+        if (form) {
+            form.style.display = 'none';
+        } else {
+            console.error("Modal não encontrado.");
+        }
+    });
+}
+
+// Chamar a função apenas quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", fecharModal);
+
+// ✅ Função corrigida para preencher o nome do cachorro no formulário
+function preencherNomeCachorro() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const nome = urlParams.get('id'); 
+
+    const dogNameForm = document.getElementById('dogNameForm');
+    if (dogNameForm) {
+        dogNameForm.textContent = nome || "Nome não disponível"; 
+    } else {
+        console.error("Elemento dogNameForm não encontrado.");
+    }
+}

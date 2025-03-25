@@ -39,10 +39,9 @@ app.post('/create_preference', async (req, res) => {
             },
         ],
         back_urls: {
-            success: "https://4601-2804-14d-7e40-8354-8c84-3b88-241e-89c7.ngrok-free.app/success.html",
-            failure: "https://6f79-2804-14d-7e40-8354-8c84-3b88-241e-89c7.ngrok-free.app/pages/failure.html",
-            pending: "https://6f79-2804-14d-7e40-8354-8c84-3b88-241e-89c7.ngrok-free.app/pages/pending.html"
-        
+            success: "http://localhost:5500/success",
+            failure: "http://localhost:5500/failure",
+            pending: "http://localhost:5500/pending"
         },
         auto_return: "all",
         "payment": {

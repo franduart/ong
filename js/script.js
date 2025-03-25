@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app); 
+export const storage = getStorage(app); 
 
 
 function hideSpinner() {
@@ -33,9 +33,7 @@ function hideSpinner() {
 
 //HERO
 document.addEventListener('DOMContentLoaded', async ()=>{
-
-
-   
+  
     const dogForm = document.getElementById('dogForm');
     const messageDiv = document.getElementById('message');
 
@@ -51,6 +49,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
             const porte = document.getElementById('porte').value;
             const dogSex = document.getElementById('sexo').value
             const data = document.getElementById('data').value
+            const custos = document.getElementById('custos').value
 
             try {
                 // Upload da imagem no Firebase Storage
@@ -67,7 +66,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     imageUrl: imageUrl,
                     porte: porte ,
                     sexo: dogSex,
-                    data: data
+                    data: data,
+                    custosMensais: custos
                    
 
                 });
@@ -126,7 +126,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     <p class="data">No abrigo desde:${dogData.data}</p>
                     <strong>Porte: ${dogData.porte}</strong>
                     <button class="btnAdotar" type="button" onclick="${paginaAdotar()}">Adotar</button>
-                    <a class="btnApadrinhar"  href="/pages/pagamento.html?id=${doc.id}">Apadrinhar</a>
+                    <a class="btnApadrinhar" href="/pages/apadrinhar.html?id=${doc.id}&custos=${dogData.custosMensais}">Apadrinhar</a>
+
                 </a>
                 `;
     
@@ -142,9 +143,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
        
     }
     
-  
     fetchCachorros();
-    
     
     async function paginaAdotar() {
         document.addEventListener('DOMContentLoaded', async () => {
@@ -177,6 +176,18 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                         dogDescriptionElement.innerText = dogData.description;
                     }
 
+                    const apadrinhar = document.getElementById('apadrinhar');
+                    apadrinhar.innerHTML = `
+                    <img src="${dogData.imageUrl}" alt="${dogData.nome}" width="200">
+                    <h3>${dogData.nome}</h3>
+                    <p>${dogData.sexo}</p>
+                    <p>${dogData.idade}</p>
+                    <p class="data">No abrigo desde:${dogData.data}</p>
+                    <strong>Porte: ${dogData.porte}</strong>
+                    <button class="btnAdotar" type="button" onclick="paginaAdotar()">Adotar</button>
+                    <a class="btnApadrinhar"  href="/pages/apadrinhar.html?id=${doc.id}apadrinhar()">Apadrinhar</a>
+                    `
+
                 } else {
                     document.body.innerHTML = "<p>Cachorro não encontrado. Por favor, tente novamente mais tarde.</p>";
                 }
@@ -186,57 +197,6 @@ document.addEventListener('DOMContentLoaded', async ()=>{
             }
         });
     }
-    
- 
-paginaAdotar()
-
-function apadrinhar() {
-    document.addEventListener('DOMContentLoaded', async () => {
-        const urlApadrinhar = new URLSearchParams(window.location.search);
-        const id = urlApadrinhar.get('id');
-
-        // Log do ID para garantir que está sendo passado na URL
-        console.log("ID da URL:", id);
-
-        if (!id) {
-            document.body.innerHTML = '<p>ID não encontrado na URL.</p>';
-            return;
-        }
-
-        try {
-            const docRef = doc(db, 'cachorros', id); 
-            const snapshot = await getDoc(docRef);
-
-            if (snapshot.exists()) {
-                const dataDog = snapshot.data(); 
-
-              
-                console.log("Dados do cachorro:", snapshot);
-
-                // Acessando o nome do cachorro corretamente
-                const nomeDog = document.getElementById('div'); 
-                const text = document.createElement('h2'); 
-
-
-                text.innerText = `Oba! Que bom que você tem interesse em apadrinhar, ${dataDog.nome} adorou saber da notícia!`;
-
-                nomeDog.appendChild(text)
-
-            } else {
-                document.body.innerHTML = "<p>Cachorro não encontrado no banco de dados.</p>";
-            }
-        } catch (error) {
-            console.error("Erro ao buscar dados do cachorro:", error);
-            document.body.innerHTML = "<p>Ocorreu um erro ao carregar os dados. Tente novamente mais tarde.</p>";
-        }
-    });
-}
-
-apadrinhar();
-
-
-
-
         async function cachorros() {
             const tableBody = document.getElementById('table');
             if (!tableBody) return;
@@ -440,34 +400,30 @@ function menuMobile(){
 
 menuMobile()
 
+})
 
-    const agendaFeiraForm = document.getElementById('agendaFeiraForm'); 
+document.addEventListener('DOMContentLoaded', function () {
+    const agendaFeiraForm = document.getElementById('agendaFeiraForm');
     const messageFeira = document.getElementById('message-feira'); 
-    
 
-    if (agendaFeiraForm) {
-
+    if (agendaFeiraForm && messageFeira) {
         agendaFeiraForm.addEventListener('submit', async (e) => {
             e.preventDefault(); 
-               
-         
+            
             const selectFeira = document.getElementById('selectFeira').value;
             const dataFeira = document.getElementById('data-feira').value;
             const horarioFeira = document.getElementById('horario-feira').value;
             const localFeira = document.getElementById('local-feira').value;
             const descricaoFeira = document.getElementById('descricaoFeira').value;
-           
-            
-            console.log(selectFeira)
 
-            if (!dataFeira || !horarioFeira || !localFeira || !selectFeira) {
+            // Verificação de campos obrigatórios
+            if (!dataFeira || !horarioFeira || !localFeira || !selectFeira || !descricaoFeira) {
                 messageFeira.textContent = "Preencha todos os campos obrigatórios corretamente.";
                 messageFeira.style.color = "red";
                 return;
             }
 
             try {
-               
                 const doc = await addDoc(collection(db, "agenda"), {
                     data: dataFeira,
                     time: horarioFeira,
@@ -475,29 +431,25 @@ menuMobile()
                     descricao: descricaoFeira,
                     select: selectFeira
                 });
-                  
-               
+
                 messageFeira.className = "success";
                 messageFeira.textContent = `Evento cadastrado com sucesso! ID do documento: ${doc.id}`;
                 messageFeira.style.color = "green";
                 agendaFeiraForm.reset(); 
-              
 
             } catch (error) {
-                
                 console.error("Erro ao cadastrar evento: ", error);
                 messageFeira.textContent = "Erro ao cadastrar evento. Tente novamente.";
                 messageFeira.style.color = "red";
             }
 
-            tableAgenda()
-           
+            // Atualiza a tabela de eventos
+            tableAgenda();
         });
-       
+    } else {
+        console.error('Elemento não encontrado: agendaFeiraForm ou message-feira');
     }
-})
-
-
+});
 
 
 async function fetchAgenda() {
@@ -526,12 +478,11 @@ async function fetchAgenda() {
     } catch (error) {
         console.error("Erro ao buscar eventos: ", error);
     }
+
 }
 
 
 document.addEventListener('DOMContentLoaded', fetchAgenda);
-
-
 
 async function tableAgenda() {
     const tableBody = document.getElementById('tableAgenda');
@@ -541,10 +492,9 @@ async function tableAgenda() {
 
     try {
         const querySnapshot = await getDocs(collection(db, "agenda"));
+        console.log(querySnapshot);  // Verifique o que está sendo retornado
         querySnapshot.forEach((doc) => {
             const agendaData = doc.data();
-
-
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${doc.id}</td>
@@ -559,7 +509,6 @@ async function tableAgenda() {
             `;
             tableBody.appendChild(row);
         });
-
 
         document.querySelectorAll('.deletar').forEach(button => {
             button.addEventListener('click', async (e) => {
@@ -579,6 +528,7 @@ async function tableAgenda() {
         console.error("Erro ao buscar eventos na agenda: ", error);
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     tableAgenda();

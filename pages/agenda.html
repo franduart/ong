@@ -44,36 +44,35 @@
               </header>
 
               <section class="formAgenda" id="cadastrar-agenda">
-                  <h2>Agenda Alma Viralata</h2>
-                      
-
-                  <form id="agendaFeiraForm" class="agenda" action="#">
-              
-                        <select name="select" id="selectFeira">
-                          <option value="">Escolha o evento</option>
-                          <option value="Feira de adoção">Feira de adoção</option>
-                          <option value="Campanha de vacinação">campanha de vacinação</option>
-                          <option value="Bazar Beneficente">Bazar Beneficente</option>
-                        </select>
-                        <label for="data-feira">Data:</label>
-                        <input type="date" id="data-feira" placeholder="Data da feira de adoção" required>
-                        
-                        <label for="horario-feira">Horário:</label>
-                        <input type="time" id="horario-feira" placeholder="Horário" required>
-                        
-                        <label for="local-feira">Local:</label>
-                        <input type="text" id="local-feira" placeholder="Local da feira" required>
-
-                        <label for="local-feira">Descrição:</label>
-                        <textarea name="descricao" id="descricaoFeira"></textarea>
-                        <button type="submit">Cadastrar Evento</button> 
-                        <p id="message-feira" aria-live="polite"></p> <!-- Corrigido ID e adicionado aria-live -->
-     
+                <h2>Agenda Alma Viralata</h2>
+            
+                <form id="agendaFeiraForm" class="agenda" action="#">
+                    <select name="select" id="selectFeira">
+                        <option value="">Escolha o evento</option>
+                        <option value="Feira de adoção">Feira de adoção</option>
+                        <option value="Campanha de vacinação">Campanha de vacinação</option>
+                        <option value="Bazar Beneficente">Bazar Beneficente</option>
+                    </select>
+                    
+                    <label for="data-feira">Data:</label>
+                    <input type="date" id="data-feira" placeholder="Data da feira de adoção" required>
+                    
+                    <label for="horario-feira">Horário:</label>
+                    <input type="time" id="horario-feira" placeholder="Horário" required>
+                    
+                    <label for="local-feira">Local:</label>
+                    <input type="text" id="local-feira" placeholder="Local da feira" required>
+            
+                    <label for="descricaoFeira">Descrição:</label>
+                    <textarea name="descricao" id="descricaoFeira" placeholder="Descreva o evento..."></textarea>
+            
+                    <button type="submit">Cadastrar Evento</button> 
+                    <p id="message-feira" aria-live="polite"></p> <!-- Exibindo a mensagem de erro ou sucesso -->
                 </form>
+            </section>
+            
 
               
-                
-              </section>
 
               <div style="margin-top: 1rem;">
                 <section class="tabelaAgenda">

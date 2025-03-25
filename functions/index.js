@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 const client = new MercadoPagoConfig({
-    accessToken: "APP_USR-SEU-TOKEN-AQUI"
+    accessToken: "APP_USR-2290553985331782-020117-9b908f9de88f82db668885ad951ef329-2243057391s"
 });
 
 app.post("/create_preference", async (req, res) => {

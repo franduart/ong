@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, getDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-storage.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -12,164 +12,115 @@ const firebaseConfig = {
     appId: "1:549152571646:web:6747b8b3df10411880e5af",
     measurementId: "G-QGV0CP4Q6W"
 };
-
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app); 
+const storage = getStorage(app);
 
-document.addEventListener('DOMContentLoaded', async ()=>{
-    const dogForm = document.getElementById('dogForm');
-    const messageDiv = document.getElementById('message');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 
-    if (dogForm) {
-        dogForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+    buscarDados(id);
+});
 
-            const dogName = document.getElementById('dogName').value;
-            const dogAge = document.getElementById('dogAge').value;
-            const dogBreed = document.getElementById('dogBreed').value;
-            const dogDescription = document.getElementById('dogDescription').value;
-            const dogImage = document.getElementById('dogImage').files[0];
-            const porte = document.getElementById('porte').value;
-            const dogSex = document.getElementById('sexo').value
-            const data = document.getElementById('data').value
-
-            try {
-                // Upload da imagem no Firebase Storage
-                const storageRef = ref(storage, `dogs/${dogImage.name}`);
-                const snapshot = await uploadBytes(storageRef, dogImage);
-                const imageUrl = await getDownloadURL(snapshot.ref);
-
-                // Adiciona os dados ao Firestore
-                const docRef = await addDoc(collection(db, "cachorros"), {
-                    nome: dogName,
-                    idade: dogAge,
-                    breed: dogBreed,
-                    description: dogDescription,
-                    imageUrl: imageUrl,
-                    porte: porte ,
-                    sexo: dogSex,
-                    data: data
-                   
-
-                });
-
-                messageDiv.textContent = `Cachorro cadastrado com sucesso! ID do documento: ${docRef.id}`;
-                messageDiv.style.color = "green";
-                dogForm.reset();
-
-                
-
-            } catch (error) {
-                console.error("Erro ao cadastrar cachorro: ", error);
-                messageDiv.textContent = "Erro ao cadastrar cachorro. Tente novamente.";
-                messageDiv.style.color = "red";
-            }
-            fetchCachorros()
-        });
+// ✅ Buscar dados do Firestore
+async function buscarDados(id) {
+    if (!id) {
+        console.error("ID não encontrado na URL");
+        return;
     }
 
-    async function fetchCachorros() {
-        const adotarDiv = document.querySelector('.card-dog');
-        if (!adotarDiv) return;
-    
-        adotarDiv.innerHTML = ""; // Limpa a área antes de renderizar
-       
-    
-        try {
-            const querySnapshot = await getDocs(collection(db, "cachorros"));
-            let count = 0; // Contador para limitar a 10 cards
-    
-            querySnapshot.forEach((doc) => {
-                if (count >= 10) return;
-    
-                const dogData = doc.data();
-    
-                // Valores padrão
-                const nome = dogData.nome || 'Nome não disponível';
-                const idade = dogData.idade || 'Idade desconhecida';
-                const porte = dogData.porte || 'Porte não informado';
-                const imageUrl = dogData.imageUrl || 'images/default-dog.jpg';
-    
-                // Cria o card
-                const dogCard = document.createElement('div');
-                dogCard.classList.add('dog-card');
-    
-                // Adiciona o evento de clique
-                dogCard.addEventListener('click', () => paginaAdotar(dogData.id));
-    
-                // Preenche o HTML do card
-                dogCard.innerHTML = `
-                   <a href="/pages/apadrinhar.html?id=${doc.id}">
-                    <img src="${dogData.imageUrl}" alt="${dogData.nome}" width="200">
-                    <h3>${dogData.nome}</h3>
-                    <p>${dogData.sexo}</p>
-                    <p>${dogData.idade}</p>
-                    <p class="data">No abrigo desde:${dogData.data}</p>
-                    <strong>Porte: ${dogData.porte}</strong>
-                    <button class="btnAdotar" type="button" onclick="${paginaAdotar()}">Adotar</button>
-                    <a class="btnApadrinhar"  href="/pages/pagamento.html?id=${doc.id}">Apadrinhar</a>
-                </a>
-                `;
-    
-                adotarDiv.appendChild(dogCard);
-                count++;
-                
-            });
-        } catch (error) {
-            console.error("Erro ao buscar cachorros: ", error);
-            adotarDiv.innerHTML = "<p>Erro ao carregar os dados. Tente novamente mais tarde.</p>";
-            
+    try {
+        const docRef = doc(db, "cachorros", id);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const dados = docSnap.data();
+            console.log("Dados do Firebase:", dados);
+            exibirNaTela(dados);
+        } else {
+            console.warn("Nenhum documento encontrado!");
         }
-       
+    } catch (error) {
+        console.error("Erro ao buscar os dados:", error);
     }
-    
-  
-    fetchCachorros();
-    
-    
-    async function paginaAdotar() {
-        document.addEventListener('DOMContentLoaded', async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get('id'); 
-        
-            if (!id) {
-                document.body.innerHTML = "<p>ID do cachorro não encontrado. Por favor, volte para a página anterior.</p>";
-                return;
-            }
-        
-            try {
-                const docRef = doc(db, "cachorros", id);
-                const snapshot = await getDoc(docRef);
-        
-                if (snapshot.exists()) {
-                    const dogData = snapshot.data();
-    
-                    const dogNameElement = document.getElementById('dogNameHeader');
-                    const dogImageElement = document.getElementById('dogImageUrl');
-                    const dogDescriptionElement = document.getElementById('dogDescription');
-    
-                    if (dogNameElement) {
-                        dogNameElement.innerText = `Interesse em adotar: ${dogData.nome}`;
-                    }
-                    if (dogImageElement) {
-                        dogImageElement.src = dogData.imageUrl;
-                    }
-                    if (dogDescriptionElement) {
-                        dogDescriptionElement.innerText = dogData.description;
-                    }
+}
 
-                } else {
-                    document.body.innerHTML = "<p>Cachorro não encontrado. Por favor, tente novamente mais tarde.</p>";
-                }
-            } catch (error) {
-                console.error("Erro ao buscar dados do cachorro:", error);
-                document.body.innerHTML = "<p>Ocorreu um erro ao carregar os dados. Tente novamente mais tarde.</p>";
+// ✅ Exibir os dados na tela
+async function exibirNaTela(dados) {
+    console.log("Exibindo dados na tela:", dados);
+
+    const nomeDog = document.getElementById("nome");
+    const imgDog = document.getElementById("dogImage");
+    const descricao = document.getElementById("descricao");
+    const temponaong = document.getElementById("temponaong");
+    const custos = document.getElementById("custosMensais");
+
+    if (!nomeDog || !descricao || !temponaong || !imgDog || !custos) {
+        console.error("Erro: Elementos do DOM não encontrados!");
+        return;
+    }
+
+    nomeDog.textContent = dados.nome || "Nome não disponível";
+    descricao.textContent = dados.description || "Descrição não disponível";
+    temponaong.textContent = "Na Ong desde: " + dados.data  || "Data não disponível";
+    custos.textContent = dados.custosMensais ? `Custos mensais: R$ ${dados.custosMensais},00` : "Custos não disponíveis";
+
+    // ✅ Verifica se há uma URL de imagem válida
+    if (dados.imageUrl) {
+        try {
+            console.log("Buscando imagem:", dados.imageUrl);
+            const imagePath = ref(storage, dados.imageUrl);
+            const url = await getDownloadURL(imagePath);
+            imgDog.src = url;
+            imgDog.alt = `Foto de ${dados.nome}`;
+        } catch (error) {
+            console.error("Erro ao carregar imagem do Firebase Storage:", error);
+        }
+    } else {
+        console.warn("Nenhuma URL de imagem encontrada no Firestore.");
+    }
+
+    // ✅ Adiciona evento ao botão "Apadrinhar"
+    const btnApadrinhar = document.getElementById("apadrinhar");
+
+    if (btnApadrinhar) {
+        btnApadrinhar.addEventListener("click", async (e) => {
+            e.preventDefault();
+            if (dados.custosMensais) {
+                processarPagamento(dados.custosMensais); 
+            } else {
+                console.error("Erro: Custos mensais não encontrados!");
             }
         });
+}
+}
+
+// ✅ Função para processar pagamento
+async function processarPagamento(custos) {
+    if (!custos) {
+        console.error("Erro: Custos não disponíveis para o apadrinhamento.");
+        return;
     }
-    
- 
-paginaAdotar()
-})
+
+    try {
+        const response = await fetch("http://localhost:5500/create_preference", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ amount: custos }) 
+        });
+
+        const data = await response.json();
+
+        if (data.url) {
+            window.location.href = data.url; 
+        } else {
+            console.error("Erro ao obter URL de pagamento");
+        }
+    } catch (error) {
+        console.error("Erro ao processar pagamento:", error);
+    }
+}
+

@@ -1,25 +1,30 @@
 document.querySelectorAll("button[data-price]").forEach(button => {
-  button.addEventListener("click", async () => {
-      const amount = button.getAttribute("data-price");
+    button.addEventListener("click", async () => {
+        const amount = Number(button.getAttribute("data-price")); // 🔹 Converte para número antes de enviar
 
-      try {
-          const response = await fetch("http://localhost:5500/create_preference", {
-              method: "POST",
-              headers: {
-                  "Content-Type": "application/json"
-              },
-              body: JSON.stringify({ amount })
-          });
+        if (isNaN(amount) || amount <= 0) {
+            console.error("Valor inválido para pagamento");
+            return;
+        }
 
-          const data = await response.json();
+        try {
+            const response = await fetch("http://localhost:5500/create_preference", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ amount })
+            });
 
-          if (data.url) {
-              window.location.href = data.url; // Redireciona para o pagamento
-          } else {
-              console.error("Erro ao obter URL de pagamento");
-          }
-      } catch (error) {
-          console.error("Erro ao processar pagamento:", error);
-      }
-  });
+            const data = await response.json();
+
+            if (data.url) {
+                window.location.href = data.url; 
+            } else {
+                console.error("Erro ao obter URL de pagamento");
+            }
+        } catch (error) {
+            console.error("Erro ao processar pagamento:", error);
+        }
+    });
 });
